@@ -24,6 +24,7 @@ require_once('./ressources/includes/connexion-bdd.php');
     <link rel="stylesheet" href="ressources/css/ne-pas-modifier/accueil.css">
 
     <link rel="stylesheet" href="ressources/css/global.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>

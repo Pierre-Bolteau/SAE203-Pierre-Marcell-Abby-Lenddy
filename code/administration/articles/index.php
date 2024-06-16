@@ -5,7 +5,7 @@ $requete_brute = '
     SELECT
         ar.id,
         ar.titre AS titre_article, 
-        ar.titre AS chapo_article,
+        ar.chapo AS chapo_article,
         ar.contenu AS contenu_article,
         ar.image AS image_article,
         ar.lien_yt AS lien_yt_article,
@@ -37,7 +37,8 @@ $URL_creation = "{$racine_URL}/creation.php";
     <header class="bg-white shadow">
         <div class="mx-auto max-w-7xl py-6 justify-between flex">
             <div>
-                <h1 class="text-3xl font-bold text-gray-900">Liste A-REMPLACER</h1>
+                <h1 class="text-3xl font-bold text-gray-900">Liste d'articles</h1>
+                <p class="text-gray-500">Nombre d'article : <?php echo mysqli_num_rows($resultat_brut); ?></p>
             </div>
             <a href="<?php echo $URL_creation ?>" class="self-start block rounded-md py-2 px-4 text-base font-medium text-white shadow-sm bg-slate-700 hover:bg-slate-900">Ajouter un nouvel article</a>
         </div>
@@ -51,7 +52,7 @@ $URL_creation = "{$racine_URL}/creation.php";
                             <th class="font-bold pl-8 py-5 text-left">Id</th>
                             <th class="font-bold pl-8 py-5 text-left">Titre</th>
                             <th class="font-bold pl-8 py-5 text-left">Chapô</th>
-                            <th class="font-bold pl-8 py-5 text-left">A REMPLACER</th>
+                            <th class="font-bold pl-8 py-5 text-left">Date de Création</th>
                             <th class="font-bold pl-8 py-5 text-left">Auteur</th>
                             <th class="pl-8 py-5"></th>
                         </tr>

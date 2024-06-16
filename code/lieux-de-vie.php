@@ -24,6 +24,14 @@ require_once('./ressources/includes/connexion-bdd.php');
 
     <link rel="stylesheet" href="ressources/css/lieux.css">
     <link rel="stylesheet" href="ressources/css/global.css">
+    <link rel="shortcut icon" href="ressources/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ressources/images/favicon.ico" type="image/x-icon">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Page Lieux de vie">
+    <meta property="og:url" content="https://sae203tp1.alwaysdata.net/SAE-203-Pierre-Abby-Marcell-Lenddy/SAE203-Pierre-Marcell-Abby-Lenddy/code/a-propos.php">
+    <meta property="og:image" content="https://images.radio-canada.ca/q_auto,w_960/v1/ici-premiere/16x9/extraterrestre-martiens-aliens-petits-hommes-verts-science-fiction-legende.jpg">
+    <meta property="og:description" content="Découvrez l'IUT Cergy-Pontoise site Sarcelles !">
 </head>
 
 <body>

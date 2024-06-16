@@ -59,6 +59,8 @@ if ($formulaire_soumis) {
 
     <link rel="stylesheet" href="ressources/css/global.css">
     <link rel="stylesheet" href="ressources/css/contact.css">
+    <link rel="shortcut icon" href="ressources/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ressources/images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>

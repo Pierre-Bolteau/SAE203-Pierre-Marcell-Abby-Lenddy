@@ -14,17 +14,20 @@ if ($entree_mise_a_jour) {
     $entite = mysqli_fetch_array($resultat_brut, MYSQLI_ASSOC);
 }
 
-if ($formulaire_soumis) {
+if ($formulaire_soumis && !empty($_POST["prenom"]) && !empty($_POST["nom"]) && !empty($_POST["lien_avatar"]) && !empty($_POST["lien_twitter"])) {
     $id = $_POST["id"];
     $nom = htmlentities($_POST["nom"]);
     $prenom = htmlentities($_POST["prenom"]);
+    $lien_avatar= htmlentities($_POST["lien_avatar"]);
+    $lien_twitter= htmlentities($_POST["lien_twitter"]);
 
     $requete_brute = "
-        UPDATE A-REMPLACER 
+        UPDATE auteur
         SET 
             nom = '$nom',
             prenom = '$prenom',
-            A-COMPLETER
+            lien_avatar = '$lien_avatar',
+            lien_twitter = '$lien_twitter'
         WHERE id = '$id'
     ";
 
@@ -32,6 +35,10 @@ if ($formulaire_soumis) {
 
     if ($resultat_brut === true) {
         // Tout s'est bien passé
+        // L'utilisateur retourne à la liste des éléments.
+        $racineURL = pathinfo($_SERVER['REQUEST_URI']);
+        $pageRedirection = $racineURL['dirname'];
+        header("Location: $pageRedirection");
     } else {
         // Il y a eu un problème
     }

@@ -6,27 +6,34 @@ $page_courante = "auteurs";
 $formulaire_soumis = !empty($_POST);
 
 if ($formulaire_soumis) {
-    if (
-        isset(
-            $_POST["prenom"],
-            $_POST["nom"],
-            $_POST["lien_avatar"],
-            $_POST["lien_twitter"]
-        )
-    ) {
+    if (!empty($_POST["prenom"]) && !empty($_POST["nom"]) && !empty($_POST["lien_avatar"]) && !empty($_POST["lien_twitter"])){
         $nom = htmlentities($_POST["nom"]);
         $prenom = htmlentities($_POST["prenom"]);
         $lien_avatar = htmlentities($_POST["lien_avatar"]);
         $lien_twitter = htmlentities($_POST["lien_twitter"]);
 
-        $requete_brute = "
+        // On récupère la date du jour
+        $date = new DateTimeImmutable();
+
+        // La date est formattée en chaîne de caractères
+        // au format Année-mois-jour Heure:minutes:secondes
+        // Sinon, elle ne pourra pas être 
+        // insérée dans la base de données
+        $date_formatte = $date->format('Y-m-d H:i:s');
+
+        $insertion_requete_brute = "
             INSERT INTO auteur(prenom, nom, lien_avatar, lien_twitter) 
             VALUES ('$nom', '$prenom', '$lien_avatar', '$lien_twitter')
         ";
-        $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
+        $resultat_brut = mysqli_query($mysqli_link, $insertion_requete_brute);
 
         if ($resultat_brut === true) {
             // Tout s'est bien passé
+            // Tout s'est bien passé
+            // L'utilisateur retourne à la liste des éléments.
+            $racineURL = pathinfo($_SERVER['REQUEST_URI']);
+            $pageRedirection = $racineURL['dirname'];
+            header("Location: $pageRedirection");
         } else {
             // Il y a eu un problème
         }
@@ -57,11 +64,11 @@ if ($formulaire_soumis) {
                 <form method="POST" action="" class="rounded-lg bg-white p-4 shadow border-gray-300 border-1">
                     <section class="grid gap-6">
                         <div class="col-span-12">
-                            <label for="nom" class="block text-lg font-medium text-gray-700">Nom</label>
+                            <label for="nom" class="block text-lg font-medium text-gray-700">Prénom</label>
                             <input type="text" name="nom" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" id="nom">
                         </div>
                         <div class="col-span-12">
-                            <label for="prenom" class="block text-lg font-medium text-gray-700">Prénom</label>
+                            <label for="prenom" class="block text-lg font-medium text-gray-700">Nom</label>
                             <input type="text" name="prenom" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" id="prenom">
                         </div>
                         <div class="col-span-12">

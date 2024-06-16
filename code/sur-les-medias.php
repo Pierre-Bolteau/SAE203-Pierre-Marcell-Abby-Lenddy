@@ -22,6 +22,14 @@ $page_active = "medias";
 
     <link rel="stylesheet" href="ressources/css/global.css">
     <link rel="stylesheet" href="ressources/css/sur-les-medias.css">
+    <link rel="shortcut icon" href="ressources/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ressources/images/favicon.ico" type="image/x-icon">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Page Sur les médias">
+    <meta property="og:url" content="https://sae203tp1.alwaysdata.net/SAE-203-Pierre-Abby-Marcell-Lenddy/SAE203-Pierre-Marcell-Abby-Lenddy/code/sur-les-medias.php">
+    <meta property="og:image" content="https://images.radio-canada.ca/q_auto,w_960/v1/ici-premiere/16x9/extraterrestre-martiens-aliens-petits-hommes-verts-science-fiction-legende.jpg">
+    <meta property="og:description" content="Regardez :D"> 
 </head>
 
 <body>

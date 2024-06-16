@@ -20,7 +20,7 @@ $page_courante = "messages";
     <header class="bg-white shadow">
         <div class="mx-auto max-w-7xl py-6">
             <h1 class="text-3xl font-bold text-gray-900">Liste messages reçus</h1>
-            <p class="text-gray-500">Nombre de messages : A REMPLACER</p>
+            <p class="text-gray-500">Nombre de messages : <?php echo mysqli_num_rows($resultat_brut); ?></p>
         </div>
     </header>
     <main>
@@ -31,11 +31,11 @@ $page_courante = "messages";
                         <tr>
                             <th class="font-bold pl-8 py-5 text-left">Id</th>
                             <th class="font-bold pl-8 py-5 text-left">Nom</th>
-                            <th class="font-bold pl-8 py-5 text-left">A CHANGER</th>
-                            <th class="font-bold pl-8 py-5 text-left">A CHANGER</th>
-                            <th class="font-bold pl-8 py-5 text-left">A CHANGER</th>
-                            <th class="font-bold pl-8 py-5 text-left">A CHANGER</th>
-                            <th class="font-bold pl-8 py-5 text-left">A CHANGER</th>
+                            <th class="font-bold pl-8 py-5 text-left">Prénom</th>
+                            <th class="font-bold pl-8 py-5 text-left">Adresse e-mail</th>
+                            <th class="font-bold pl-8 py-5 text-left">Message</th>
+                            <th class="font-bold pl-8 py-5 text-left">Je suis</th>
+                            <th class="font-bold pl-8 py-5 text-left"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,9 +44,9 @@ $page_courante = "messages";
                                 <td class="pl-8 p-4 font-bold"><?php echo $element["id"]; ?></td>
                                 <td class="pl-8 p-4"><?php echo $element["nom"]; ?></td>
                                 <td class="pl-8 p-4"><?php echo $element["prenom"]; ?></td>
-                                <td class="pl-8 p-4"></td>
-                                <td class="pl-8 p-4"></td>
-                                <td class="pl-8 p-4"></td>
+                                <td class="pl-8 p-4"><?php echo $element["email"]; ?></td>
+                                <td class="pl-8 p-4"><?php echo $element["contenu"]; ?></td>
+                                <td class="pl-8 p-4"><?php echo $element["type"]; ?></td>
                                 <td class="pl-8 p-4"></td>
                             </tr>
                         <?php } ?>

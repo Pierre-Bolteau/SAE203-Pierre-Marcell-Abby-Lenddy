@@ -26,6 +26,17 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 
     <link rel="stylesheet" href="ressources/css/global.css">
     <link rel="stylesheet" href="ressources/css/accueil.css">
+    <link rel="shortcut icon" href="ressources/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ressources/images/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Page d'accueil">
+    <meta property="og:url" content="https://sae203tp1.alwaysdata.net/SAE-203-Pierre-Abby-Marcell-Lenddy/SAE203-Pierre-Marcell-Abby-Lenddy/code/">
+    <meta property="og:image" content="https://images.radio-canada.ca/q_auto,w_960/v1/ici-premiere/16x9/extraterrestre-martiens-aliens-petits-hommes-verts-science-fiction-legende.jpg">
+    <meta property="og:description" content="Salut terrien, visite mon site ;D ">
+    
 </head>
 
 <body>
@@ -45,9 +56,9 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
                         elle va recevoir la valeur envoyée dans l'URL. 
                         Vous pourrez récupérer la valeur en php grâce à $_GET["id"]
                      -->
-                        <a href="article.php?id=<?php echo $article["id"]; ?>" class='article'>
+                        <a href="article.php?id=<?php echo $article["id"]; ?>" class='article transition-transform duration-300 ease-in-out transform hover:scale-105'> 
                             <figure>
-                                <img src='ressources/images/image-article.png' alt=''>
+                                <img src='<?php echo $article['image']; ?>' alt=''>
                             </figure>
                             <section class='textes'>
                                 <h1 class='titre'><?php echo $article["titre"]; ?></h1>
